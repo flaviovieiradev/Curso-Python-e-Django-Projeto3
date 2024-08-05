@@ -65,3 +65,24 @@ class Funcionario(Base):
 
     def __str__(self):
         return self.nome
+
+
+class Recursos(Base):
+    recurso = models.CharField('Nome', max_length=100)
+    ICONE_CHOICES = (
+        ('lni-rocket', 'Foguete'),
+        ('lni-laptop-phone', 'Laptop'),
+        ('lni-cog', 'Engrenagem'),
+        ('lni-leaf', 'Folha'),
+        ('lni-layers', 'Camadas'),
+        ('lni-leaf', 'Foguete'),
+    )
+    texto = models.CharField('Nome', max_length=100)
+    icone = models.CharField('Ícone', max_length=18, choices=ICONE_CHOICES)
+
+    class Meta:
+        verbose_name = 'Recurso'
+        verbose_name_plural = 'Recursos'
+
+    def __str__(self):
+        return self.recurso
