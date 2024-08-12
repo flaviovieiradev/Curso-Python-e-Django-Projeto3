@@ -67,7 +67,7 @@ class Funcionario(Base):
         return self.nome
 
 
-class Recursos(Base):
+class Recurso(Base):
     recurso = models.CharField('Nome', max_length=100)
     ICONE_CHOICES = (
         ('lni-rocket', 'Foguete'),
@@ -77,7 +77,7 @@ class Recursos(Base):
         ('lni-layers', 'Camadas'),
         ('lni-leaf', 'Foguete'),
     )
-    texto = models.CharField('Nome', max_length=100)
+    texto = models.TextField('Texto', max_length=200)
     icone = models.CharField('Ícone', max_length=18, choices=ICONE_CHOICES)
 
     class Meta:

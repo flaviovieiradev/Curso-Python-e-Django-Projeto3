@@ -2,7 +2,7 @@ from django.contrib import admin
 
 # Register your models here.
 
-from .models import Cargo, Funcionario, Servico
+from .models import Cargo, Funcionario, Servico, Recurso
 
 
 @admin.register(Cargo)
@@ -19,3 +19,7 @@ class ServicoAdmin(admin.ModelAdmin):
 class FuncionarioAdmin(admin.ModelAdmin):
     list_display = ('nome', 'cargo', 'ativo', 'modificado')
 
+
+@admin.register(Recurso)
+class RecursoAdmin(admin.ModelAdmin):
+    list_display = ('recurso', 'icone', 'texto', 'ativo', 'modificado')
